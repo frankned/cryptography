@@ -3,56 +3,33 @@
 #include <stdio.h>
 
 int main()
+    {
+      int i, x;
+      char str[100];
+      
+      printf("\nPor favor insira um texto:\t");
+      fgets(str, 100, stdin);
+      
+      printf("\nEscolha uma das opcoes:\n");
+      printf("1 = Encriptar o texto.\n");
+      printf("2 = Decriptar o texto.\n");
+      scanf("%d", &x);
 
-{
+      switch(x)
+          {
+            case 1:
+              for(i = 0; (i < 100 && str[i] != '\0'); i++)
+              str[i] = str[i] + 3; //Cifra de Cesar em 3 (+)
+              printf("\nTexto encriptado: %s\n", str);
+              break;
+            case 2:
+              for(i = 0; (i < 100 && str[i] != '\0'); i++)
+              str[i] = str[i] - 3; //Cifra de Cesar em 3 (-3)
+              printf("\nTexto decriptado: %s\n", str);
+              break;
+            default:
+              printf("\nErro\n");
+          }
 
-int i, x;
-
-char str[100];
-
-printf("\nPor favor insira um texto:\t");
-
-fgets(str, 100, stdin);
-
-printf("\nEscolha uma das opcoes:\n");
-
-printf("1 = Encriptar o texto.\n");
-
-printf("2 = Decriptar o texto.\n");
-
-scanf("%d", &x);
-
-switch(x)
-
-{
-
-case 1:
-
-for(i = 0; (i < 100 && str[i] != '\0'); i++)
-
-str[i] = str[i] + 3; //Cifra de Cesar em 3 (+)
-
-printf("\nTexto encriptado: %s\n", str);
-
-break;
-
-case 2:
-
-for(i = 0; (i < 100 && str[i] != '\0'); i++)
-
-str[i] = str[i] - 3; //Cifra de Cesar em 3 (-3)
-
-printf("\nTexto decriptado: %s\n", str);
-
-break;
-
-default:
-
-printf("\nErro\n");
-
-}
-
-return 0;
-
-}
-                
+      return 0;
+    }
